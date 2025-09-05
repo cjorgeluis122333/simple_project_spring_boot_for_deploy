@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  app_pets:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app_pets
+    ports:
+      - "8010:8010"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://pets_config:3306/school_database?createDatabaseIfNotExist=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: jorge
+      SPRING_DATASOURCE_PASSWORD: 123456
+    depends_on:
+      pets_config:
+        condition: service_healthy
+    restart: always
+
+  pets_config:
+    image: mysql:9.4.0
+    container_name: pets_config
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: jorge
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: school_database
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
