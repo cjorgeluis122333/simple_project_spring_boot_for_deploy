@@ -19,4 +19,6 @@ public class PetsController {
     String showPet(@PathVariable int id) {
         return "Dog with id: " + id;
     }
+
+
 }
