@@ -1,6 +1,7 @@
 package com.jorgeluis.microservice.simple_project_spring_boot.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,4 +15,8 @@ public class PetsController {
         return List.of("Dog", "Cat", "Cow", "Bird", "Fish");
     }
 
+    @GetMapping("/{id}")
+    String showPet(@PathVariable int id) {
+        return "Dog with id: " + id;
+    }
 }
