@@ -7,13 +7,12 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/school_database
-    username: jorge
-    password: 123456
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/school_database?createDatabaseIfNotExist=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:jorge}
+    password: ${SPRING_DATASOURCE_PASSWORD:123456}
+
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
-
-

@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.jorgeluis.microservice</groupId>
     <artifactId>simple_project_spring_boot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>simple_project_spring_boot</name>
     <description>simple_project_spring_boot</description>
     <url/>
