@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/pets")
 public class PetsController {
-    @GetMapping("/")
+    @GetMapping({"/","/list"})
     List<String> showPets() {
         return List.of("Dog", "Cat", "Cow", "Bird", "Fish");
     }
@@ -19,6 +19,7 @@ public class PetsController {
     String showPet(@PathVariable int id) {
         return "Dog with id: " + id;
     }
+
 
 
 }
