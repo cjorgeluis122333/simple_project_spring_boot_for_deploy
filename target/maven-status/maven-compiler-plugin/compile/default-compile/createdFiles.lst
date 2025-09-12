@@ -1,0 +1,6 @@
+com\jorgeluis\microservice\simple_project_spring_boot\repository\PetsRepository.class
+com\jorgeluis\microservice\simple_project_spring_boot\service\PetsServiceImpl.class
+com\jorgeluis\microservice\simple_project_spring_boot\controller\PetsController.class
+com\jorgeluis\microservice\simple_project_spring_boot\service\PetsService.class
+com\jorgeluis\microservice\simple_project_spring_boot\model\DogEntity.class
+com\jorgeluis\microservice\simple_project_spring_boot\SimpleProjectSpringBootApplication.class

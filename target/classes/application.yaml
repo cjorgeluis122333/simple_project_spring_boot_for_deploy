@@ -1,0 +1,18 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: app_pets
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/school_database?createDatabaseIfNotExist=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:jorge}
+    password: ${SPRING_DATASOURCE_PASSWORD:123456}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
