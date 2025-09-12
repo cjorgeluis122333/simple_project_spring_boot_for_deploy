@@ -1,6 +1,7 @@
 package com.jorgeluis.microservice.simple_project_spring_boot.service;
 
 import com.jorgeluis.microservice.simple_project_spring_boot.model.DogEntity;
+import com.jorgeluis.microservice.simple_project_spring_boot.model.exception.UserNotFoundException;
 import com.jorgeluis.microservice.simple_project_spring_boot.repository.PetsRepository;
 import lombok.AllArgsConstructor;
 import lombok.val;
@@ -37,9 +38,10 @@ public class PetsServiceImpl implements PetsService {
 
     @Override
     @Transactional
-    public DogEntity updateDog(DogEntity dog) {
+    public DogEntity updateDog(DogEntity dog) throws UserNotFoundException {
         val temp = petsRepository.findById(dog.getId());
-        return temp.isPresent() ? null : petsRepository.save(dog);
+        if (temp.isPresent()) return petsRepository.save(dog);
+        else throw new UserNotFoundException();
     }
 
     @Override
