@@ -55,4 +55,9 @@ public class PetsServiceImpl implements PetsService {
             return null;
         }
     }
+
+    @Override
+    public List<DogEntity> getDogsLikeName(String name) {
+        return petsRepository.findByNameLike(name);
+    }
 }

@@ -18,4 +18,5 @@ public interface PetsService {
 
     DogEntity deleteDog(int id);
 
+    List<DogEntity> getDogsLikeName(String name);
 }
