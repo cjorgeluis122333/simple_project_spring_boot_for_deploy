@@ -51,9 +51,9 @@ public class PetsServiceImpl implements PetsService {
         if (temp.isPresent()) {
             petsRepository.delete(temp.get());
             return temp.get();
-        } else {
+        } else
             return null;
-        }
+
     }
 
     @Override
